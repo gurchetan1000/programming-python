@@ -1,0 +1,299 @@
+Python Notes - docs.python.org
+
+Python is an INTERPRETED Language.Line by Line execution of statements.
+File Extension is .py
+No Brackets for defining scope , only indendation.
+Python is loosely typed like Javascript. Loosely typed means - variable name can store any kind of data.
+No semicolon , no brackets , one statement in a line.
+Dictionaries in Python for storing key value pairs.
+Python Good Thing - Big Number Calculation , Python interpreter as a calculator as well.
+
+Python3 -
+	17/3  :  float
+	17//3 : int
+	5**2  : power
+	abcd = 123  //assignment
+	Python supports integers , floats , "Prateek Narang",'Hey' are Strings , No CHAR Type in python.
+	Escape Characters : \t , \n , \'
+
+	Raw String , Precede with r
+		mystring = r 'Coding \t\tPython'
+		print(mystring)     //Output will be as it is , no effect.
+
+		print 3*'ABCD' + 'PQR'
+		-> ABCDABCDABCDPQR
+
+		MUTABILITY
+			word[0] = 'B'
+			Strings Are Immutable.
+
+		NEGATIVE INDEXS work -
+			0 is first , -1 is the last.
+			print word[-1]
+
+		SLICING
+			word[0:2]
+			->prints word[0]word[1]
+
+			word[:11]
+			->prints 0 to upto 10
+
+			word[11:]
+			->prints index 11 onwards
+
+			word[-2:]
+			->QR //Prints Last two characters.  
+			
+			word[5:2]
+			-> No ouptput
+			// Slicing works in the forward direction only.
+
+
+		MODIFYING A STRING
+			word = word[:5]+XYZW+word[9:]
+
+		LENGTH
+			len(word)
+			->10
+
+		DELETING ith Character
+			word = word[:i] + word[i+1:]
+
+		ARRAYS ARE LISTS IN PYTHON
+			a = []
+			a.append(23)
+			a.append('adfd')
+			->[32,'adfd']  //Lists are Heterogenous
+
+		SLICING WORKS WITH LISTS
+			squares = [1,4,9,16,25]
+			squares[1:3]
+			->[4,9]
+
+			'+' operator works with lists
+			squares += [36,49]
+
+			Lists are Mutable.
+			squares[1] = 0;
+		DELETING AN ELEMENT AT POSITION 2
+			squares[2:3] = []  
+		ADDING ELEMENTS AT POSTION 2
+			squares[2:3] = [1,2,3,4,5]
+
+		LEN WORKS ON LISTS
+			len(squares)
+
+		COOL STUFF-
+			b = [squares,squares*2]
+			b will not store reference of 'square' . Entire list is COPIED.
+
+		MULTIPLE ASSIGNMENTS
+			a,b = 2,3
+			print a   // ->2
+			print b    // -> 3
+
+		LOOPS	
+			while j<10:
+				print(something)
+
+		PRINT COMMA AS SEPARATOR (Automatic Spacing)
+ 			print("this is X",i,j)
+
+ 		NUMBERS TO BE CONVERTED INTO STRING
+ 			"Your Rank is " + str(1)
+ 		PYTHON Supports NAME ARGUMENTS and POSITION ARGUMENTS
+ 				f(a,b,c,d)          //Call f(10,20,30,40)
+ 				f(a,b,c,d)           // Call (d=10,a=5,b=3,c=1)  
+
+ 				print(j,end=',')    //end is the Named Argument. 
+
+ 		FOR LOOP AND RANGE
+ 		C++ like FOR loop DOESN'T Work . Only For in loop.
+
+ 			for i in a:
+ 				do something
+
+ 			for i in range(1,100)
+
+
+ 			list(range(1,100))
+
+ 			list(range(10,100))
+
+ 			list(range(10,100,2))
+ 			-> [10,12,14,16,18,...................98]
+
+ 		BREAK and CONTINUE
+
+ 	 	*IMPORTANT : LOOPS HAVE AN ELSE CLAUSE
+
+ 	 	for something :
+
+	 	 	for x in range(...)
+	 	 		if ... :
+	 	 			something
+
+ 	 	else:
+ 	 		print(n)
+
+
+ 	 	COMMENTS : 
+ 	 	 #This is single line comment.
+ 	 	 """ Multiline String Used as Comment. """
+
+#PROGRAM TO PRINT FIBONACCI NUMBERS
+
+def fibo(n):
+	result = []
+	a,b = 0 ,1
+	while(a,N)
+		result.append(a)
+		a,b  = b,a+b
+	print result
+
+
+#DATASTRUCTURES IN PYTHON
+	
+#LAMBDA EXPRESSIONS
+	
+	def make_incrementer(n):
+		return lambda x:x+n
+
+	f = make_incrementor(42)
+
+	f(0) //->42
+	f(11) //->53
+
+	#lambda is used to return a small function (single statement)
+
+#DELETE STATEMENT
+b = [1,2,3]
+
+del b[0]
+
+#DELETE ENTIRE LIST
+	b.clear()
+	del b[:]
+
+
+#TUPLES , immutable lists
+	t = (12,3)
+	p = (12,)
+
+	t[0] = 13 // X  , tuples are immutable.
+#TUPLES , from Lists.
+	t = ([12,1,3,14],)
+	t[0].clear();  // Valid , first list can be cleared.
+
+	t =(1,2,3)
+	a,b,c = t;
+	// a =1 , b = 2, c=3
+
+	a,b,c = [1,2,3
+
+#input
+	x = input("input something");
+#AND OR
+	and
+	or
+
+#LIST , TUPLES , SETS , DICTONARIES
+#SET
+	 Collection of non-duplicate.
+	 a = {1,2,3,4,1,1,1}
+	 print(a)
+	 {1,2,3,4}
+
+	 b = {5,1,2}
+	 Operations on Sets ! 
+
+	 a-b
+	 a & b
+	 a ^ b 
+	 a | b
+
+#DICTIONARY
+	a =	{'car':'Ford','fruit':'banana'}
+
+	a.keys()
+
+	#Iterating over keys or values.
+	for x in a.keys():
+		print(x)
+
+	for x in a.values():
+		print(x)
+
+#Other stuff.
+	a = list("abcdde")
+	a = ['abacded']
+
+	a = [1,2,3]
+	c = a
+	'c' is MADE BY REFERENCE
+	b = list(a)
+	'b' is made by COPY
+
+#TUPLE
+	c = () //Empty Tuple
+	c = (1,) //Single Element tuple
+	c = (1,2,3) // Two or More
+#SET vs DICTIONARY
+	a = {}   // DICTIONARY NOT SET
+	a = set() // Constructor is required.
+
+	a = dict("ab","cd","ef","gh")
+
+	knights = ..some dictionary..
+	for key,value in kinghts.items():
+		print(key)
+		print(value)
+
+#MODULES in Python
+	Any Python file is a Module.
+
+	import file_name
+
+	file_name.function(argument)
+	mylib.fibo(10)
+
+	from file_name import *
+    fibo(10)
+	
+	from file_name import fibo,parrot 
+
+	import my_function
+	dir()  // Gives all function names.
+
+#PACKAGKES
+	Package is a group of Modules.
+	Folder behaves as a package.
+
+
+	mkdir mypackage
+	cd mypackage
+	cp function.py
+
+	-----------------------------------------
+	import mypackage
+	from mypackage.filename import function_name
+	
+	print(function_name(5))
+	
+	------------------------------------------
+
+	import mypackage
+	from mypackage import filename
+
+	print(filename.function_name(5))
+
+	----------------------------------
+
+#Scope 
+	nonlocal my_var =  //nonlocal means previous scope
+	global my_var = 
+
+-------------------------------------LIBRARIES
+-> Beautiful Soup : XML , HTML , JSON Parsing 
+-> Return img src of an HTML Page using urllib
+-> Graph API : JSON To Dictionary...
